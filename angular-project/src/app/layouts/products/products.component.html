@@ -1,0 +1,25 @@
+<div class="cls" id="div3">
+  <div class="section">
+    <div class="row">
+      <h3 class="center">{{ title }}</h3>
+      <!-- <div>
+        <p>Product ID :- {{ mobPart.prodId }}</p>
+        <p>Product Name :- {{ mobPart.prodName }}</p>
+        <p>Product Stock :- {{ mobPart.prodInStock }}</p>
+        <p>Product Price :- {{ mobPart.prodPrice }}</p>
+      </div> -->
+
+      <ul>
+        <li class="product-box" *ngFor="let mobPart of mobParts">
+          <p>Product ID :- {{ mobPart.prodId }}</p>
+          <p>Product Name :- {{ mobPart.prodName }}</p>
+          <p *ngIf="0 < mobPart.prodInStock; else outOfStock">
+            Product Stock :- {{ mobPart.prodInStock }}
+          </p>
+          <ng-template #outOfStock>Out of Stock</ng-template>
+          <p>Product Price :- {{ mobPart.prodPrice }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

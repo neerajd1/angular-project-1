@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+  padding: 5px;
+  margin: 0px;
+}
+.cls {
+  border: 1px solid silver;
+  height: 450px;
+}
+
+#div2 {
+  background-image: url(assets/background1.jpg);
+}
+
+#div4 {
+  background-image: url(assets/background2.jpg);
+}
+#div6 {
+  background-image: url(assets/background3.jpg);
+}
+
+.parallax {
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+#div1,
+#div7 {
+  height: 100px !important;
+}
