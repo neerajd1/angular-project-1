@@ -8,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class ProductsComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
-
   title = 'Products';
   mobParts = [
     {
@@ -17,18 +15,23 @@ export class ProductsComponent implements OnInit {
       prodName: 'Apple',
       prodInStock: 55,
       prodPrice: 80000,
+      country: 'Australia',
     },
     {
       prodId: 1002,
       prodName: 'Samsung',
       prodInStock: 105,
       prodPrice: 40000,
+      country: 'India',
     },
     {
       prodId: 1003,
       prodName: 'Apple',
       prodInStock: 0,
       prodPrice: 80000,
-    }
+      country: '',
+    },
   ];
+
+  ngOnInit(): void {}
 }
