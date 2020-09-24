@@ -1,0 +1,43 @@
+<h4 class="center">We have total {{ calcProducts() }} mobiles</h4>
+<ul>
+  <li
+    [ngClass]="{ soldOut: mobPart.sold }"
+    class="product-box"
+    *ngFor="let mobPart of mobParts"
+  >
+    <p>Product ID :- {{ mobPart.prodId }}</p>
+    <p>Product Name :- {{ mobPart.prodName }}</p>
+    <p *ngIf="0 < mobPart.prodInStock; else outOfStock">
+      Product Stock :- {{ mobPart.prodInStock }}
+    </p>
+    <ng-template #outOfStock>
+      <p>Out of Stock</p>
+    </ng-template>
+    <p>Product Price :- {{ mobPart.prodPrice }}</p>
+    <p>
+      Country:
+      <span [ngSwitch]="mobPart.country">
+        <img
+          *ngSwitchCase="'Australia'"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/23px-Flag_of_Australia.svg.png"
+          width="24"
+        />
+        <img
+          *ngSwitchCase="'Germany'"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png"
+          width="24"
+        />
+        <img
+          *ngSwitchCase="'India'"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/23px-Flag_of_India.svg.png"
+          width="24"
+        />
+        <img
+          *ngSwitchDefault
+          src="https://cdn2.iconfinder.com/data/icons/world-flag-icons/256/Flag_of_Japan.png"
+          width="24"
+        />
+      </span>
+    </p>
+  </li>
+</ul>
