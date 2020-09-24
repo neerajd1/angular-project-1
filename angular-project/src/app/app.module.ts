@@ -15,8 +15,10 @@ import { BikesComponent } from './products/bikes/bikes.component';
 import { CarsComponent } from './products/cars/cars.component';
 import { BooksComponent } from './products/books/books.component';
 import { LaptopsComponent } from './products/laptops/laptops.component';
+import { OfferPipe } from './pipes/offer.pipe';
+import { StyleDirectiveDirective } from './directives/style-directive.directive';
 @NgModule({
-  declarations: [FirstComponent, NavComponent, BannerOneComponent, ProductsComponent, BannerTwoComponent, CantactUsComponent, BannerThreeComponent, FooterComponent, ContactUsComponent, MobilesComponent, BikesComponent, CarsComponent, BooksComponent, LaptopsComponent],
+  declarations: [FirstComponent, NavComponent, BannerOneComponent, ProductsComponent, BannerTwoComponent, CantactUsComponent, BannerThreeComponent, FooterComponent, ContactUsComponent, MobilesComponent, BikesComponent, CarsComponent, BooksComponent, LaptopsComponent, OfferPipe, StyleDirectiveDirective],
   imports: [BrowserModule],
   bootstrap: [FirstComponent],
 }) 

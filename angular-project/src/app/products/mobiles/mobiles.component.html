@@ -1,4 +1,4 @@
-<h4 class="center">We have total {{ calcProducts() }} mobiles</h4>
+<h4 class="center" appStyleDirective>We have total {{ calcProducts() }} mobiles</h4>
 <ul>
   <li
     [ngClass]="{ soldOut: mobPart.sold }"
@@ -6,14 +6,18 @@
     *ngFor="let mobPart of mobParts"
   >
     <p>Product ID :- {{ mobPart.prodId }}</p>
-    <p>Product Name :- {{ mobPart.prodName }}</p>
+    <p>Product Name :- {{ mobPart.prodName | uppercase }}</p>
     <p *ngIf="0 < mobPart.prodInStock; else outOfStock">
       Product Stock :- {{ mobPart.prodInStock }}
     </p>
     <ng-template #outOfStock>
       <p>Out of Stock</p>
     </ng-template>
-    <p>Product Price :- {{ mobPart.prodPrice }}</p>
+    <p>
+      Product Price :-
+      <s style="color: red"> {{ mobPart.prodPrice | currency: "INR" }}</s>
+    </p>
+    <p>Product Price :- {{ mobPart.prodPrice | offer }}</p>
     <p>
       Country:
       <span [ngSwitch]="mobPart.country">
